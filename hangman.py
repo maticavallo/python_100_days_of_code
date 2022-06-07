@@ -5,13 +5,12 @@ word_length = len(chosen_word)
 display = []
 end_of_the_game = False
 
+for _ in range(word_length):
+    display += "_"
 
-while end_of_the_game == False:
+while not end_of_the_game:
     guess = input("Guess a letter: ").lower()
     
-    for blank in range(word_length):
-        display += "_"
-
     for position in range(word_length):
         letter = chosen_word[position]
         if letter == guess:
@@ -19,4 +18,4 @@ while end_of_the_game == False:
     print(display)
     if "_" not in display:
         end_of_the_game = True
-    print('You win.')
+        print('You win.')
